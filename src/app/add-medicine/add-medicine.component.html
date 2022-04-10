@@ -1,0 +1,61 @@
+
+<div class="container">
+
+    <h1>Add Medicine Details</h1>
+
+    <form>
+
+        <div class="form-group">
+
+            <label for="medicinename">Medicine Name</label><br>
+
+            <input type="text" name="medicinename" class = "form-control" [(ngModel)]="medicinedetails.medicineName">
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="tabletcount">Tablet Count</label><br>
+
+            <input type="text" name="tabletcount" class = "form-control"    [(ngModel)]="medicinedetails.tabletCount">
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="expirydate">Expiry Date</label><br>
+
+            <input type="text" name="expirydate" class = "form-control" [(ngModel)]="medicinedetails.expiryDate">
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="details">Details and Uses of Medicine</label><br>
+
+            <input type="text" name="details" class = "form-control" [(ngModel)]="medicinedetails.details">
+
+        </div>
+
+        <pre></pre>
+        <div class="form-group">
+
+            <label for="medicinedomain">Medicine Domain</label><br>
+
+            <input type="text" name="medicinedomain" class = "form-control" [(ngModel)]="medicinedetails.medicineDomain">
+
+        </div>
+<br>
+        <button class="btn btn-primary" type="submit" (click)=registerMedicine()>Submit</button>
+
+    </form>
+
+</div>
+<br>
+{{medicinedetails.details}}
