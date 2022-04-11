@@ -44,13 +44,23 @@
         </div>
 
         <pre></pre>
+        <!-- ***********drop down menu*************** -->
         <div class="form-group">
 
             <label for="medicinedomain">Medicine Domain</label><br>
 
-            <input type="text" name="medicinedomain" class = "form-control" [(ngModel)]="medicinedetails.medicineDomain">
-
+           
+            <select (change)="selectChangeHandler($event)">
+              <option value="antibiotics">Antibiotics</option>
+              <option value="coughsyrup">CoughSyrup</option>
+              <option value="vitamins">Vitamins</option>
+              <option value="eyes">Eyes</option>
+              <option value="kidney">Kidney</option>
+              <option value="others">Others</option>
+            </select>
+            
         </div>
+
 <br>
         <button class="btn btn-primary" type="submit" (click)=registerMedicine()>Submit</button>
 
@@ -58,4 +68,4 @@
 
 </div>
 <br>
-{{medicinedetails.details}}
+

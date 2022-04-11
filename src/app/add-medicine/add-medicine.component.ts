@@ -11,36 +11,27 @@ import { AddMedicineService } from '../service/add-medicine.service';
 export class AddMedicineComponent implements OnInit {
 
   medicinedetails: medicineDetails=new medicineDetails();
-  medicineresponse: medicineResponse=new medicineResponse();
-  
-  
   
   constructor(private service:AddMedicineService) { }
 
   ngOnInit(): void {
+    
   }
 
-
+// ***************event handler to add medicine details***************
   public registerMedicine(){
       this.service.doaddmedicine(this.medicinedetails).subscribe(
-        response=>
-          (this.display(response))
+        res=>
+          (console.log("ok"))
       )
   }
 
-  public display(response){
-    this.medicineresponse.medicineName=response.medicineName,
-    this.medicineresponse.tabletCount=response.tabletCount,
-    this.medicineresponse.expiryDate=response.expiryDate,
-    this.medicineresponse.details=response.details,
-    this.medicineresponse=response.medicineDomain,
-    console.log(response)
-  }
-  
+  // ********event handler for drop drown (medicine domain)*********** 
+  selectChangeHandler(event:any){
+    this.medicinedetails.medicineDomain=event.target.value
+    }
 
-  // public registerNow(){
-  //   let resp=this.service.doRegistration(this.user);
-  //   resp.subscribe((data)=>this.message=data);
-  //     }
+
+ 
 
 }

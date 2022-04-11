@@ -14,13 +14,20 @@ import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CardsComponent } from './cards/cards.component';
+import {MatListModule} from '@angular/material/list';
+import {LayoutModule} from '@angular/cdk/layout';
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AddMedicineComponent
+    AddMedicineComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,9 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatSidenavModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
