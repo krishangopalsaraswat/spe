@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { medicineResponse } from '../medicineResponse';
+import { AddMedicineService } from '../service/add-medicine.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
 
   medicineresponse:medicineResponse=new medicineResponse();
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    private service:AddMedicineService) { }
 
   ngOnInit(): void {
     
@@ -31,8 +33,18 @@ export class HeaderComponent implements OnInit {
   }
 
   searchMedicine:any;
-  public getMedicine(){
-    console.log(this.searchMedicine)
-  }
+  mresponse : any;
   
+
+  public getMedicine(){
+    this.service.getmedicinebyName(this.searchMedicine).subscribe(
+      (response)=>{(console.log(response)),
+        (this.mresponse=response)
+      }),
+      this.router.navigate(["getMedicine"])
+}
+
+public gotoAuthentication(){
+  this.router.navigate(['authentication'])
+}
 }

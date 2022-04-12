@@ -18,8 +18,7 @@ export class CardsComponent implements OnInit {
  
   ngOnInit(): void {
     // ****************subscribe function to load data from backend************
-    let resp=this.service.getallmedicines();
-    resp.subscribe((data)=>this.medicine=data);
+    this.service.getallmedicines().subscribe((data)=>this.medicine=data);
  
   }
 

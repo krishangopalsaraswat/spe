@@ -8,6 +8,7 @@ export class AddMedicineService {
 
   constructor(private http:HttpClient) { }
 
+  // *******donate medicine********
   public doaddmedicine(medicinedetails){
     return this.http.post("http://localhost:8081/addMedicineDetails",medicinedetails);
   }
@@ -16,14 +17,15 @@ export class AddMedicineService {
     return this.http.get("http://localhost:8081/searchMedicineDetails/"+mname);
   }
 
-  // public getUserByEmail(email){
-  //   return this.http.get("http://localhost:9090//findUser/"+email);
-  // }
-  // public doRegistration(user){
-  //   return this.http.post("http://localhost:9090/register",user,{responseType:'text' as 'json'});
-  // }
 
+// ********getting all medicine details to home component********
   public getallmedicines(){
     return this.http.get("http://localhost:8081/medicine");
+  }
+
+
+  // ********fired by search box********
+  public getmedicinebyName(searchMedicine){
+    return this.http.get("http://localhost:8081/searchMedicineDetails/"+searchMedicine);
   }
 }

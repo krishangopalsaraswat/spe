@@ -1,6 +1,6 @@
 
-<mat-card class="example-card" *ngFor="let i of medicine" >
-    <mat-card-title-group >
+<mat-card class="example-card" *ngFor="let i of childresponse" >
+    <mat-card-title-group>
       <mat-card-title>{{i.medicineName}}</mat-card-title>
       <mat-card-subtitle>Medicine Count: {{i.tabletCount}}</mat-card-subtitle>
       <mat-card-subtitle>expiryDate: {{i.expiryDate}}</mat-card-subtitle>
@@ -12,10 +12,3 @@
     </mat-card-title-group>
     
   </mat-card>
-  
-
-  
-  
-<router-outlet></router-outlet>
-
-  

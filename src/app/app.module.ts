@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { CardsComponent } from './cards/cards.component';
 import {MatListModule} from '@angular/material/list';
 import {LayoutModule} from '@angular/cdk/layout';
+import { SearchDataComponent } from './search-data/search-data.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 
@@ -27,7 +29,9 @@ import {LayoutModule} from '@angular/cdk/layout';
     AppComponent,
     HeaderComponent,
     AddMedicineComponent,
-    CardsComponent
+    CardsComponent,
+    SearchDataComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,

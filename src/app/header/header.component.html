@@ -1,5 +1,4 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button color="accent"style='margin-right:14px'><mat-icon (click)="sidenav.toggle()">menu</mat-icon></button>
   
     <button mat-raised-button color="primary"style='margin-right:20px'
     (click)=home()><mat-icon>home</mat-icon></button>
@@ -9,14 +8,17 @@
           <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchMedicine">
 
       <button mat-raised-button color="accent"style='margin-right:16px' (click)=getMedicine()>Search</button>
+      
       <button mat-raised-button color="accent" style='margin-right:16px' 
       (click)=donateMedicine()>Donate Medicine</button>
         <button mat-raised-button color="accent"style='margin-right:16px'><mat-icon>room</mat-icon>
         </button>
-    <button mat-raised-button color="accent">Login</button>
+    <button mat-raised-button color="accent" (click)="gotoAuthentication()">Login</button>
     
 </mat-toolbar>
 <!-- ********side nav bar***************** -->
+  <!-- <button mat-icon-button color="accent"style='margin-right:14px'><mat-icon (click)="sidenav.toggle();">menu</mat-icon></button> -->
+<!-- 
 <mat-sidenav-container style="height: 90vh;">
   <mat-sidenav #sidenav>
     <mat-nav-list>
@@ -28,8 +30,12 @@
       <a mat-list-item>Others</a>
     </mat-nav-list>
   </mat-sidenav>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
 
+    
+
+
+<app-search-data [childresponse]="mresponse"></app-search-data>
 
 
 

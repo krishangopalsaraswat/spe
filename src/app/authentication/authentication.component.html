@@ -1,0 +1,18 @@
+<br>
+<br>
+<div class="login">
+    <div>
+        UserName: <input type="text" name="username" [(ngModel)]="users.username">
+    </div>
+    <br>
+    <div>
+        Password: <input type="password" name="password" [(ngModel)]="users.password">
+    </div>
+    <br>
+    <button (click)="getlogin()">Login</button>
+    <br>
+    <br>
+    <button (click)="createuser()">Signup</button>
+</div>
+{{auth}}
+<!-- <router-outlet></router-outlet> -->
