@@ -10,7 +10,13 @@
       <button mat-raised-button color="accent"style='margin-right:16px' (click)=getMedicine()>Search</button>
       
       <button mat-raised-button color="accent" style='margin-right:16px' 
+<<<<<<< HEAD
       (click)=donateMedicine() *ngIf="!dataservice.isUserLoggedIn()">Donate Medicine</button>
+=======
+      (click)=donateMedicine()>Donate Medicine</button>
+      <button mat-raised-button color="accent" style='margin-right:16px' 
+      (click)=showDonations()> Your donations </button>
+>>>>>>> 4215c43cb1853f21c730f4c02d5a109f3be83914
         <button mat-raised-button color="accent"style='margin-right:16px'><mat-icon>room</mat-icon>
         </button>
     <button mat-raised-button color="accent" (click)="gotoAuthentication()"

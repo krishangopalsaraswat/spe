@@ -5,14 +5,15 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { CardsComponent } from './cards/cards.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchDataComponent } from './search-data/search-data.component';
+import { ShowDonComponent } from './show-don/show-don.component';
 
 const routes: Routes = [
   {path:"", component:CardsComponent},
   {path:"donateMedicine",component:AddMedicineComponent} ,
   {path:"home",component:CardsComponent},
   {path:"getMedicine",component:SearchDataComponent},
-  {path:"authentication",component:AuthenticationComponent}
-  
+  {path:"authentication",component:AuthenticationComponent},
+  {path:"showDonations",component:ShowDonComponent}
 ];
 
 @NgModule({
