@@ -26,6 +26,11 @@ export class HeaderComponent implements OnInit {
     console.log("clicked")
   }
 
+  public showDonations(){
+    this.router.navigate(['showDonations']),
+    console.log("showDonations")
+    
+  }
   // ********routing to cards page***********
   public home(){
     this.router.navigate(['home']),

@@ -19,7 +19,9 @@ export class AddMedicineComponent implements OnInit {
   }
 
 // ***************event handler to add medicine details***************
+
   public registerMedicine(){
+    
       this.service.doaddmedicine(this.medicinedetails).subscribe(
         res=>
           (console.log("ok"))
