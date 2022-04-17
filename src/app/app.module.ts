@@ -19,6 +19,7 @@ import {MatListModule} from '@angular/material/list';
 import {LayoutModule} from '@angular/cdk/layout';
 import { SearchDataComponent } from './search-data/search-data.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -31,7 +32,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     AddMedicineComponent,
     CardsComponent,
     SearchDataComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     MatListModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [AuthenticationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

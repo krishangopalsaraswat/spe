@@ -15,25 +15,51 @@ export class user{
 export class AuthenticationComponent implements OnInit {
 
  users: user=new user;
-  auth:any;
-  constructor(private service:AuthenticationServiceService,
-    private router:Router) { }
+  signinDisable=true;
+  signupDisable=true;
+  constructor(public service:AuthenticationServiceService,
+    private router:Router,
+   ) { }
 
   ngOnInit(): void {
   }
 
   public getlogin(){
     this.service.dologin(this.users).subscribe(
-(response)=>this.auth=response
+(response)=>{this.valid(response),console.log(this.signinDisable)}
     )
 
   }
+// *********
+// Credentials = {
+//   username: "",
+//   password: "",
+// }
+invalidLogin = true;
 
+  valid(response){
+    console.log(response[0])
+    if(this.users.username===response[0].username && this.users.password===response[0].password){
+      sessionStorage.setItem('authenticatedUser', this.users.username);
+      // sessionStorage.setItem('a')
+      // this.router.navigate(['welcome', this.users.username]);
+      this.invalidLogin = false;
+      this.router.navigate(['home'])
+    }
+    else {
+      this.invalidLogin = true;
+    }
+  }
+
+  
   public createuser(){
     this.service.dosignup(this.users).subscribe(
       (response)=>console.log("regristraion done")
-          )
-    this.router.navigate(['home'])
+          ),
+          (sessionStorage.setItem('authenticatedUser', this.users.username)),
+    (this.router.navigate(['home']))  
   }
+
+  
   
 }

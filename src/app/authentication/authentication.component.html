@@ -12,7 +12,7 @@
     <button (click)="getlogin()">Login</button>
     <br>
     <br>
-    <button (click)="createuser()">Signup</button>
+    <button (click)="createuser()" *ngIf='service.isUserLoggedIn()'>Signup</button>
 </div>
-{{auth}}
+
 <!-- <router-outlet></router-outlet> -->

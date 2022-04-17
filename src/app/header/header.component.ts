@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationComponent} from '../authentication/authentication.component';
 import { medicineResponse } from '../medicineResponse';
 import { AddMedicineService } from '../service/add-medicine.service';
+import { AuthenticationServiceService } from '../service/authentication-service.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,9 @@ export class HeaderComponent implements OnInit {
   medicineresponse:medicineResponse=new medicineResponse();
 
   constructor(private router:Router,
-    private service:AddMedicineService) { }
+    private service:AddMedicineService,
+    public validUser:AuthenticationComponent,
+    public dataservice:AuthenticationServiceService) { }
 
   ngOnInit(): void {
     
@@ -22,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
   // **********rounting to add medicine page**********
   public donateMedicine(){
+   
     this.router.navigate(['donateMedicine']),
     console.log("clicked")
   }
@@ -46,5 +51,10 @@ export class HeaderComponent implements OnInit {
 
 public gotoAuthentication(){
   this.router.navigate(['authentication'])
+}
+
+gotoAuthenticationService(){
+  this.dataservice.logout();
+  this.router.navigate(['home'])
 }
 }
