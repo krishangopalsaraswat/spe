@@ -19,11 +19,12 @@ import {MatListModule} from '@angular/material/list';
 import {LayoutModule} from '@angular/cdk/layout';
 import { SearchDataComponent } from './search-data/search-data.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
-<<<<<<< HEAD
+
 import { HomeComponent } from './home/home.component';
-=======
+
 import { ShowDonComponent } from './show-don/show-don.component';
->>>>>>> 4215c43cb1853f21c730f4c02d5a109f3be83914
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -37,11 +38,9 @@ import { ShowDonComponent } from './show-don/show-don.component';
     CardsComponent,
     SearchDataComponent,
     AuthenticationComponent,
-<<<<<<< HEAD
-    HomeComponent
-=======
+    HomeComponent,
     ShowDonComponent
->>>>>>> 4215c43cb1853f21c730f4c02d5a109f3be83914
+
   ],
   imports: [
     BrowserModule,
@@ -55,7 +54,8 @@ import { ShowDonComponent } from './show-don/show-don.component';
     FormsModule,
     HttpClientModule,
     MatListModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule
   ],
   providers: [AuthenticationComponent],
   bootstrap: [AppComponent]

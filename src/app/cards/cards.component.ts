@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { medicineResponse } from '../medicineResponse';
+import { Router } from '@angular/router';
 import { AddMedicineService } from '../service/add-medicine.service';
 
 
@@ -13,13 +13,20 @@ export class CardsComponent implements OnInit {
 // ****object to recieve data from backend*****
   medicine:any;
 
-  constructor(private service:AddMedicineService) { }
+  constructor(private service:AddMedicineService
+    ,private router:Router) { }
 
  
   ngOnInit(): void {
     // ****************subscribe function to load data from backend************
     this.service.getallmedicines().subscribe((data)=>this.medicine=data);
  
+  }
+
+  request(){
+    sessionStorage.setItem('medicinename', this.medicine.medicineName);
+    console.log("request clicked")
+    this.router.navigate(['request'])
   }
 
 }

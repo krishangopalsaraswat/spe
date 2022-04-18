@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationComponent} from '../authentication/authentication.component';
-import { medicineResponse } from '../medicineResponse';
 import { AddMedicineService } from '../service/add-medicine.service';
 import { AuthenticationServiceService } from '../service/authentication-service.service';
+import { ShowDonationsService } from '../service/show-donations.service';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +12,12 @@ import { AuthenticationServiceService } from '../service/authentication-service.
 })
 export class HeaderComponent implements OnInit {
 
-  medicineresponse:medicineResponse=new medicineResponse();
 
   constructor(private router:Router,
     private service:AddMedicineService,
     public validUser:AuthenticationComponent,
-    public dataservice:AuthenticationServiceService) { }
+    public dataservice:AuthenticationServiceService,
+    public showDownService:ShowDonationsService) { }
 
   ngOnInit(): void {
     
@@ -30,8 +30,13 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['donateMedicine']),
     console.log("clicked")
   }
+  mob='123'
+  mobileResponse:any;
 
   public showDonations(){
+    this.showDownService.getDonations(this.mob).subscribe(
+      response=>(this.mobileResponse=response)
+    ),
     this.router.navigate(['showDonations']),
     console.log("showDonations")
     

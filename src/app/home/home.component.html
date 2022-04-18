@@ -1,2 +1,55 @@
-<!-- <app-header></app-header> -->
-<!-- <app-cards></app-cards> -->
+
+<div class="container" class="container">
+
+    <h1>Request Medicine</h1>
+
+    <form>
+
+        <div class="form-group">
+
+            <label for="name">Name</label><br>
+
+            <input type="text" name="name" class = "form-control" [(ngModel)]="medicinerequest.name">
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="email">Email</label><br>
+
+            <input type="text" name="email" class = "form-control"    [(ngModel)]="medicinerequest.email">
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="mobile">Phone Number</label><br>
+
+            <input type="text" name="mobile" class = "form-control" [(ngModel)]="medicinerequest.mobile">
+
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+
+            <label for="address">Address</label><br>
+
+            <input type="text" name="address" class = "form-control" [(ngModel)]="medicinerequest.address">
+
+        </div>
+        <br>
+        <br>
+       
+        <button class="btn btn-primary" type="submit" (click)="requestmedicine()">Submit Request</button>
+
+    </form>
+
+</div>
+<br>
+{{medicinerequest.medicinename}}
+

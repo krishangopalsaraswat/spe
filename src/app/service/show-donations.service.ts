@@ -8,9 +8,13 @@ export class ShowDonationsService {
 
   constructor(private http: HttpClient) { }
 
+  public deleteById(id){
+    return this.http.get("http://localhost:8084/deleteById/"+id);
+  }
+
   public getDonations(mob){
     console.log("ang-service");
-    return this.http.get("http://localhost:8081/getDonations/"+mob);
+    return this.http.get("http://localhost:8084/getDonations/"+mob);
   }
 }
 
