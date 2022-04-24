@@ -12,7 +12,7 @@ export class CardsComponent implements OnInit {
 
 // ****object to recieve data from backend*****
   medicine:any;
-
+  medname:any;
   constructor(private service:AddMedicineService
     ,private router:Router) { }
 
@@ -23,10 +23,11 @@ export class CardsComponent implements OnInit {
  
   }
 
-  request(){
-    sessionStorage.setItem('medicinename', this.medicine.medicineName);
-    console.log("request clicked")
-    this.router.navigate(['request'])
+  request(mname){
+    // sessionStorage.setItem('medicinename', this.medicine.medicineName);
+    this.medname=mname;
+    console.log(this.medname)
+    this.router.navigate(['request'],{ state: { example: 'bar' } })
   }
 
 }

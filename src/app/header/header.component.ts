@@ -26,9 +26,9 @@ export class HeaderComponent implements OnInit {
 
   // **********rounting to add medicine page**********
   public donateMedicine(){
-   
-    this.router.navigate(['donateMedicine']),
-    console.log("clicked")
+    this.router.navigate(['donateMedicine']).then(() => {
+    window.location.reload();//to auto reload web page when navigating
+  });
   }
   mob='123'
   mobileResponse:any;

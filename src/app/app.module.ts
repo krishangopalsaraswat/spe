@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 
 import { ShowDonComponent } from './show-don/show-don.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -55,9 +56,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatListModule,
     LayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule
+  
   ],
-  providers: [AuthenticationComponent],
+  providers: [AuthenticationComponent,CardsComponent,HomeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { CardsComponent } from '../cards/cards.component';
 import { medicineRequest } from '../medicineRequest';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
@@ -10,19 +12,22 @@ import { medicineRequest } from '../medicineRequest';
 })
 export class HomeComponent implements OnInit {
 
-  
+  @Input() homechild:any;
 medicinerequest:medicineRequest=new medicineRequest;
   constructor(private router:Router,
-    public card:CardsComponent) { }
+    public card:CardsComponent) { 
+      // console.log(this.router.getCurrentNavigation().extras.state.example); 
+    }
   
   
   ngOnInit() {
-    
+    console.log(this.homechild)
 }
-medname:any;
+
 requestmedicine(){
-  console.log(sessionStorage.getItem('medicinename'));
-  console.log(this.medicinerequest.medicinename)
+
+  console.log(this.card.medname),
+  // console.log(this.medicinerequest.medicinename)
   this.router.navigate(['home'])
 }
 
