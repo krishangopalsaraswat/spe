@@ -15,7 +15,7 @@ export class SearchDataComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.childresponse)
-    // j
+    
   }
   
   request(){
