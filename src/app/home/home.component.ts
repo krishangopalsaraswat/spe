@@ -22,6 +22,7 @@ medicinerequest:medicineRequest=new medicineRequest;
   
   ngOnInit() {
     console.log(this.homechild)
+
 }
 
 requestmedicine(){
@@ -29,6 +30,7 @@ requestmedicine(){
   console.log(this.card.medname),
   // console.log(this.medicinerequest.medicinename)
   this.router.navigate(['home'])
+  
 }
 
 }
