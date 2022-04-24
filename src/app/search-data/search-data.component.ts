@@ -1,4 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search-data',
@@ -9,10 +11,18 @@ export class SearchDataComponent implements OnInit {
 
   @Input() childresponse:any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     console.log(this.childresponse)
+  }
+  
+  request(){
+    // sessionStorage.setItem('medicinename', this.medicine.medicineName);
+    // window.location.reload();
+   
+    this.router.navigate(['request'])
+
   }
 
 }

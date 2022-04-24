@@ -2,84 +2,19 @@
 <br>
 <div class="login">
     <div>
-        UserName: <input type="text" name="username" [(ngModel)]="users.username">
+        UserName:   <input type="text" name="username" [(ngModel)]="users.username">
     </div>
     <br>
     <div>
-        Password: <input type="password" name="password" [(ngModel)]="users.password">
+        Password:   <input type="password" name="password" [(ngModel)]="users.password">
     </div>
     <br>
-    <button (click)="getlogin()">Login</button>
     <br>
-    <br>
-    <button (click)="createuser()" *ngIf='service.isUserLoggedIn()'>Signup</button>
+
+    <div class="row buttons">
+    <button class="btn btn-success" (click)="getlogin()">Login</button>
+    <button class="btn btn-primary" (click)="createuser()" *ngIf='service.isUserLoggedIn()'>Signup</button>
+  </div>
 </div>
 
 <!-- <router-outlet></router-outlet> -->
-<!-- ************ribhu code************** -->
-<div class="bootstrap-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <mat-card>
-            <div class="container text-center">
-              <img src="../../../assets/logo.png" alt="" />
-            </div>
-  
-            <h1 class="text-center">Login Here !!</h1>
-  
-            <!-- {{ loginData | json }} -->
-            <form>
-  
-              <!-- Role -->
-              <mat-form-field class="full-width" appearance="outline">
-                  <mat-label>Your Role</mat-label>
-                  <input
-                    name="role"
-                    required
-                    matInput
-                    placeholder="Enter here"
-                  />
-                  <mat-hint>Type user/admin/worker</mat-hint>
-                </mat-form-field>
-  
-              <!-- username field -->
-              <mat-form-field class="full-width" appearance="outline">
-                <mat-label>User Name</mat-label>
-                <input
-                  name="username"
-                  required
-                  matInput
-                  placeholder="Enter here"
-                />
-                <mat-hint>Valid User Name</mat-hint>
-              </mat-form-field>
-  
-              <!-- password field  -->
-  
-              <mat-form-field class="full-width" appearance="outline">
-                <mat-label>User Password</mat-label>
-                <input
-                  
-                  name="password"
-                  type="password"
-                  required
-                  matInput
-                  placeholder="Enter here"
-                />
-              </mat-form-field>
-  
-              <div class="container text-center">
-                <button mat-raised-button color="primary" type="submit">
-                  Login
-                </button>
-                <button class="ml10" mat-raised-button color="accent">
-                  Reset
-                </button>
-              </div>
-            </form>
-          </mat-card>
-        </div>
-      </div>
-    </div>
-  </div>

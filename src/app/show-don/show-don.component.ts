@@ -15,7 +15,8 @@ export class ShowDonComponent implements OnInit {
   constructor(private service: ShowDonationsService) { }
 
   delete(id){
-    this.service.deleteById(id).subscribe((data)=> this.donations=data);
+    this.service.deleteById(id).subscribe((data)=> this.donations=data)
+    window.location.reload();
   }
 
   ngOnInit(): void {

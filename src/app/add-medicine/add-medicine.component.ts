@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { medicineDetails } from '../medicineDetails';
 import { AddMedicineService } from '../service/add-medicine.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-medicine',
@@ -11,7 +12,8 @@ export class AddMedicineComponent implements OnInit {
 
   medicinedetails: medicineDetails=new medicineDetails();
   
-  constructor(private service:AddMedicineService) { }
+  constructor(private service:AddMedicineService, 
+    private router:Router) { }
 
   ngOnInit(): void {
     
@@ -25,6 +27,8 @@ export class AddMedicineComponent implements OnInit {
         res=>
           (console.log("ok"))
       )
+      this.router.navigate(['home'])
+
   }
 
   // ********event handler for drop drown (medicine domain)*********** 

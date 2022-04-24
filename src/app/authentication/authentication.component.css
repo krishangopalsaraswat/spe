@@ -1,4 +1,13 @@
 .login{
     text-align: center;
-    
+    border: 1px solid;
+    padding: 20px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    width: 500px;
+    margin:auto;
+    /* top:200px; */
+    font-weight: bold;
+}
+.buttons{
+    justify-content:space-evenly;
 }

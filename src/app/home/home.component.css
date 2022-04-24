@@ -1,8 +1,17 @@
 .container {
-    
-    position: relative;
-    top:20%;
-    left:30%;
-    /* align-items: center; */
-    /* outline: dashed 1px black; */
-  }
+  width: 350px;
+  position: relative;
+  top:100px;
+  /* align-items: center; */
+  /* text-align: center; */
+  /* outline: dashed 1px black; */
+}
+#full {
+  border: 1px solid;
+  padding: 20px;
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+.fill{
+  width: 200px;
+  height: 25px;
+}

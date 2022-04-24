@@ -1,24 +1,37 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="header" color="primary" id="header">
   
     <button mat-raised-button color="primary"style='margin-right:20px'
     (click)=home()><mat-icon>home</mat-icon></button>
     <span>Karuna</span>
-    <div class="example-spacer"></div>
   
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchMedicine">
+    
+    <div class="example-spacer"></div>
 
-      <button mat-raised-button color="accent"style='margin-right:16px' (click)=getMedicine()>Search</button>
+      <input class="find form-control rounded mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchMedicine">
+
+        <mat-icon (click)=getMedicine()>search</mat-icon>
+      <div class="dropdown">
+        <button class="dropbtn btn btn-warning">Select by Category</button>
+        <div class="dropdown-content">
+          <a href="#">Antibiotics</a>
+          <a href="#">Cough Syrup</a>
+          <a href="#">Vitamins</a>
+          <a href="#">Eyes</a>
+          <a href="#">Kidney</a>
+          <a href="#">Others</a>
+        </div>
+      </div>
       
-      <button mat-raised-button color="accent" style='margin-right:16px' (click)=donateMedicine() *ngIf="!dataservice.isUserLoggedIn()">Donate Medicine</button>
+      <button class="btn btn-warning" color="accent" style='margin-right:16px' (click)=donateMedicine() *ngIf="!dataservice.isUserLoggedIn()">Donate Medicine</button>
 
       
-      <button mat-raised-button color="accent" style='margin-right:16px' *ngIf="!dataservice.isUserLoggedIn()" (click)=showDonations()> Your donations </button>
+      <button class="btn btn-warning" color="accent" style='margin-right:16px' *ngIf="!dataservice.isUserLoggedIn()" (click)=showDonations()> Your donations </button>
 
-        <button mat-raised-button color="accent"style='margin-right:16px'><mat-icon>room</mat-icon>
+        <button class="btn btn-warning" color="accent"style='margin-right:16px'><mat-icon>room</mat-icon>
         </button>
-    <button mat-raised-button color="accent" (click)="gotoAuthentication()"
+    <button class="btn btn-warning"n color="accent" (click)="gotoAuthentication()"
     *ngIf="dataservice.isUserLoggedIn()">Login</button>
-    <button mat-raised-button color="accent" (click)="gotoAuthenticationService()"
+    <button class="btn btn-warning" color="accent" (click)="gotoAuthenticationService()"
     *ngIf="!dataservice.isUserLoggedIn()" >Logout</button>
     
 </mat-toolbar>
