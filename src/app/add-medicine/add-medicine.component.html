@@ -36,13 +36,13 @@
             <input type="text" name="details" class = "fill form-control" [(ngModel)]="medicinedetails.details">
 
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
 
             <label for="mobile">Mobile</label><br>
 
             <input type="text" name="details" class = "fill form-control" [(ngModel)]="medicinedetails.mobile">
 
-        </div>
+        </div> -->
 
         <!-- ***********drop down menu*************** -->
         <div class="fill form-group">
@@ -51,6 +51,7 @@
 
            
             <select (change)="selectChangeHandler($event)">
+                
               <option value="antibiotics">Antibiotics</option>
               <option value="coughsyrup">CoughSyrup</option>
               <option value="vitamins">Vitamins</option>
@@ -68,4 +69,5 @@
 
 </div>
 <br>
+
 

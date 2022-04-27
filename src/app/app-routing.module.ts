@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:"getMedicine",component:SearchDataComponent},
   {path:"authentication",component:AuthenticationComponent},
   {path:"showDonations",component:ShowDonComponent},
-  {path:"request",component:HomeComponent}
+  {path:"request/:medName/:tabletCount/:useremail",component:HomeComponent}
 ];
 
 @NgModule({

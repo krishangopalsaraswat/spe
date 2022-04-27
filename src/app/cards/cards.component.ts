@@ -24,11 +24,12 @@ export class CardsComponent implements OnInit {
 
      
 
-  request(mname){
+  request(mname,tcount,useremail){
     // sessionStorage.setItem('medicinename', this.medicine.medicineName);
     this.medname=mname;
-    console.log(this.medname)
-    this.router.navigate(['request'],{ state: { example: 'bar' } })
+    console.log(useremail)
+
+    this.router.navigate(['request',mname,tcount,useremail])
   }
 
 }

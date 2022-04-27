@@ -2,7 +2,7 @@
 <br>
 <div class="login">
     <div>
-        UserName:   <input type="text" name="username" [(ngModel)]="users.username">
+        Email:   <input type="text" name="username" [(ngModel)]="users.username">
     </div>
     <br>
     <div>
@@ -13,7 +13,7 @@
 
     <div class="row buttons">
     <button class="btn btn-success" (click)="getlogin()">Login</button>
-    <button class="btn btn-primary" (click)="createuser()" *ngIf='service.isUserLoggedIn()'>Signup</button>
+    <button class="btn btn-primary" (click)="createuser()"   >Signup</button>
   </div>
 </div>
 

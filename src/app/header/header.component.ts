@@ -30,11 +30,11 @@ export class HeaderComponent implements OnInit {
     window.location.reload();//to auto reload web page when navigating
   });
   }
-  mob='123'
+  userEmail=sessionStorage.getItem('authenticatedUser');
   mobileResponse:any;
 
   public showDonations(){
-    this.showDownService.getDonations(this.mob).subscribe(
+    this.showDownService.getDonations(this.userEmail).subscribe(
       response=>(this.mobileResponse=response)
     ),
     this.router.navigate(['showDonations']),

@@ -5,6 +5,6 @@ export class medicineDetails{
         expiryDate:any;
         details:any;
         medicineDomain:any;
-        mobile:any;
+        userEmail:any;
     
 }

@@ -15,14 +15,16 @@ export class AddMedicineComponent implements OnInit {
   constructor(private service:AddMedicineService, 
     private router:Router) { }
 
+    useremail:any;
   ngOnInit(): void {
+    this.useremail=sessionStorage.getItem('authenticatedUser');
     
   }
 
 // ***************event handler to add medicine details***************
 
   public registerMedicine(){
-    
+    this.medicinedetails.userEmail=this.useremail
       this.service.doaddmedicine(this.medicinedetails).subscribe(
         res=>
           (console.log("ok"))
@@ -35,6 +37,8 @@ export class AddMedicineComponent implements OnInit {
   selectChangeHandler(event:any){
     this.medicinedetails.medicineDomain=event.target.value
     }
+
+// ***************SHow eamil************
 
 
  

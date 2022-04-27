@@ -16,9 +16,10 @@ export class AuthenticationComponent implements OnInit {
 
  users: user=new user;
   signinDisable=true;
-  signupDisable=true;
+ 
   constructor(public service:AuthenticationServiceService,
     private router:Router,
+    public dataservice:AuthenticationServiceService
    ) { }
 
   ngOnInit(): void {
@@ -26,23 +27,19 @@ export class AuthenticationComponent implements OnInit {
 
   public getlogin(){
     this.service.dologin(this.users).subscribe(
-(response)=>{this.valid(response),console.log(this.signinDisable)}
+(response)=>{this.valid(response),console.log(this.signinDisable)},
+(error)=>console.log(error.error)
     )
 
   }
-// *********
-// Credentials = {
-//   username: "",
-//   password: "",
-// }
+
 invalidLogin = true;
 
   valid(response){
     console.log(response[0])
     if(this.users.username===response[0].username && this.users.password===response[0].password){
       sessionStorage.setItem('authenticatedUser', this.users.username);
-      // sessionStorage.setItem('a')
-      // this.router.navigate(['welcome', this.users.username]);
+    
       this.invalidLogin = false;
       this.router.navigate(['home'])
     }
@@ -51,13 +48,16 @@ invalidLogin = true;
     }
   }
 
+  signupDisable:any;
   
   public createuser(){
     this.service.dosignup(this.users).subscribe(
       (response)=>console.log("regristraion done")
           ),
-          (sessionStorage.setItem('authenticatedUser', this.users.username)),
-    (this.router.navigate(['home']))  
+          // this.signupDisable='true';
+          // (sessionStorage.setItem('registereduser', this.users.username)),
+          // console.log(sessionStorage.getItem('registereduser')),
+    (this.router.navigate(['authentication']))  
   }
 
   

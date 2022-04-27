@@ -1,8 +1,9 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CardsComponent } from '../cards/cards.component';
 import { medicineRequest } from '../medicineRequest';
 import { Location } from '@angular/common';
+import { RequestServiceService } from '../service/request-service.service';
 
 
 @Component({
@@ -14,22 +15,32 @@ export class HomeComponent implements OnInit {
 
   @Input() homechild:any;
 medicinerequest:medicineRequest=new medicineRequest;
+
   constructor(private router:Router,
-    public card:CardsComponent) { 
+    public card:CardsComponent,
+    private service:RequestServiceService,
+    private route:ActivatedRoute) { 
       // console.log(this.router.getCurrentNavigation().extras.state.example); 
     }
   
+    requestedMedicineName:any;
+    availableTablets:any;
+
   
   ngOnInit() {
-    console.log(this.homechild)
-
+    this.requestedMedicineName=this.route.snapshot.params['medName']
+    this.availableTablets=this.route.snapshot.params['tabletCount']
+    // console.log(this.route.snapshot.params['medName'])
+    this.medicinerequest.userEmail=this.route.snapshot.params['useremail']
+    console.log(this.medicinerequest.userEmail)
 }
 
-requestmedicine(){
 
-  console.log(this.card.medname),
-  // console.log(this.medicinerequest.medicinename)
-  this.router.navigate(['home'])
+requestmedicine(){
+      this.service.sendemailForRequest(this.medicinerequest).subscribe(
+        response=>console.log("ok")
+      ),
+this.router.navigate(['home'])
   
 }
 

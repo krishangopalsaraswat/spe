@@ -21,6 +21,14 @@ export class AuthenticationServiceService {
     return (user === null);
   }
   
+  isUserregistered() {
+    const registereduser = sessionStorage.getItem('registereduser');
+    // console.log(registereduser)
+    // return !(registereduser === null);
+    return true;
+  }
+
+
   logout() {
     sessionStorage.removeItem('authenticatedUser');
   }
