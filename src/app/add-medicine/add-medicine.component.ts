@@ -30,11 +30,15 @@ export class AddMedicineComponent implements OnInit {
         res=>
           {console.log("ok"),this.added=true;}
       )
+<<<<<<< HEAD
       
       
       // this.router.navigate(['home'])
       // window.location.href = "home"
       // window.location.href='home'
+=======
+      window.location.href='home'
+>>>>>>> main
 
   }
 

@@ -26,9 +26,12 @@ import { ShowDonComponent } from './show-don/show-don.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SearchByCategoryComponent } from './search-by-category/search-by-category.component';
+<<<<<<< HEAD
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateTabletCountComponent } from './update-tablet-count/update-tablet-count.component';
+=======
+>>>>>>> main
 
 
 
@@ -45,8 +48,12 @@ import { UpdateTabletCountComponent } from './update-tablet-count/update-tablet-
     AuthenticationComponent,
     HomeComponent,
     ShowDonComponent,
+<<<<<<< HEAD
     SearchByCategoryComponent,
     UpdateTabletCountComponent
+=======
+    SearchByCategoryComponent
+>>>>>>> main
 
   ],
   imports: [

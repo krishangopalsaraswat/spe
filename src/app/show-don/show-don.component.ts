@@ -16,7 +16,11 @@ export class ShowDonComponent implements OnInit {
   donations:any;
 
   ChildMobileResponse:any;
+<<<<<<< HEAD
   constructor(private service: ShowDonationsService,public dialog: MatDialog) { }
+=======
+  constructor(private service: ShowDonationsService) { }
+>>>>>>> main
 
   delete(id){
     this.service.deleteById(id).subscribe((data)=> this.donations=data)
@@ -31,6 +35,7 @@ export class ShowDonComponent implements OnInit {
     this.service.getDonations(sessionStorage.getItem('authenticatedUser')).subscribe(
       response=>(this.ChildMobileResponse=response)
     )
+<<<<<<< HEAD
   }
    
   
@@ -39,6 +44,8 @@ export class ShowDonComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+=======
+>>>>>>> main
   }
 
 }

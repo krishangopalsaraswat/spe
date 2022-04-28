@@ -46,9 +46,13 @@ requestmedicine(){
         this.submitted = true;
   
 }
+<<<<<<< HEAD
 redirect(){
   this.router.navigate(['home'])
 
+=======
+// window.location.href=""
+>>>>>>> main
 }
 
 // window.location.href=""
