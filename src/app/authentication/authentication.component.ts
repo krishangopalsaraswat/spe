@@ -34,7 +34,6 @@ export class AuthenticationComponent implements OnInit {
     )
   }
 
-// validLogin = false;
 
   valid(response){
     console.log(response[0])
