@@ -29,7 +29,7 @@ export class AddMedicineComponent implements OnInit {
         res=>
           (console.log("ok"))
       )
-      this.router.navigate(['home'])
+      window.location.href='home'
 
   }
 

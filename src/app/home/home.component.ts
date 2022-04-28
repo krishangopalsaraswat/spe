@@ -43,6 +43,6 @@ requestmedicine(){
 this.router.navigate(['home'])
   
 }
-
+// window.location.href=""
 }
 
