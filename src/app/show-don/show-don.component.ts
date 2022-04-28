@@ -11,17 +11,22 @@ export class ShowDonComponent implements OnInit {
 
   donations:any;
 
-  @Input() ChildMobileResponse:any;
+  ChildMobileResponse:any;
   constructor(private service: ShowDonationsService) { }
 
   delete(id){
     this.service.deleteById(id).subscribe((data)=> this.donations=data)
-    window.location.reload();
+    console.log("deletion done")
+    this.ngOnInit();
+    window.location.href="showDonations"
   }
 
   ngOnInit(): void {
     // this.service.getDonations("123").subscribe((data)=> this.donations=data);
-    console.log(this.ChildMobileResponse)
+    
+    this.service.getDonations(sessionStorage.getItem('authenticatedUser')).subscribe(
+      response=>(this.ChildMobileResponse=response)
+    )
   }
 
 }

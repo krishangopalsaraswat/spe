@@ -52,11 +52,11 @@ export class HeaderComponent implements OnInit {
   
 
   public getMedicine(){
-    this.service.getmedicinebyName(this.searchMedicine).subscribe(
-      (response)=>{(console.log(response)),
-        (this.mresponse=response)
-      }),
-      this.router.navigate(["getMedicine"])
+    // this.service.getmedicinebyName(this.searchMedicine).subscribe(
+    //   (response)=>{(console.log(response)),
+    //     (this.mresponse=response)
+    //   }),
+      this.router.navigate(["getMedicine",this.searchMedicine])
 }
 
 public gotoAuthentication(){
@@ -67,4 +67,11 @@ gotoAuthenticationService(){
   this.dataservice.logout();
   this.router.navigate(['home'])
 }
+
+// ****************search by category*****************
+selectcategory(){
+  window.location.href="getMedicine"
+
+}
+
 }
