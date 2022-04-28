@@ -33,7 +33,7 @@ export class AuthenticationComponent implements OnInit {
 (error)=>{console.log("err")}
     )
   }
-
+// **
 
   valid(response){
     console.log(response[0])
