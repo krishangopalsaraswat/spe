@@ -27,6 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SearchByCategoryComponent } from './search-by-category/search-by-category.component';
 
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateTabletCountComponent } from './update-tablet-count/update-tablet-count.component';
+
 
 
 
@@ -42,7 +45,8 @@ import { SearchByCategoryComponent } from './search-by-category/search-by-catego
     AuthenticationComponent,
     HomeComponent,
     ShowDonComponent,
-    SearchByCategoryComponent
+    SearchByCategoryComponent,
+    UpdateTabletCountComponent
 
   ],
   imports: [
@@ -59,7 +63,8 @@ import { SearchByCategoryComponent } from './search-by-category/search-by-catego
     MatListModule,
     LayoutModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   
   ],
   providers: [AuthenticationComponent,CardsComponent,HomeComponent],

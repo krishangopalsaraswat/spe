@@ -1,6 +1,10 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ShowDonationsService } from '../service/show-donations.service';
 // import { AuthenticationComponent } from '../authentication/authentication.component';
+import {MatDialog} from '@angular/material/dialog';
+import { AddMedicineComponent } from '../add-medicine/add-medicine.component';
+import { UpdateTabletCountComponent } from '../update-tablet-count/update-tablet-count.component';
+
 
 @Component({
   selector: 'app-show-don',
@@ -12,7 +16,7 @@ export class ShowDonComponent implements OnInit {
   donations:any;
 
   ChildMobileResponse:any;
-  constructor(private service: ShowDonationsService) { }
+  constructor(private service: ShowDonationsService,public dialog: MatDialog) { }
 
   delete(id){
     this.service.deleteById(id).subscribe((data)=> this.donations=data)
@@ -28,5 +32,14 @@ export class ShowDonComponent implements OnInit {
       response=>(this.ChildMobileResponse=response)
     )
   }
+   
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(UpdateTabletCountComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 
 }
+
