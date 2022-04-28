@@ -9,7 +9,7 @@
 
             <label for="medicinename">Medicine Name</label><br>
 
-            <input type="text" name="medicinename" class = "fill form-control" [(ngModel)]="medicinedetails.medicineName">
+            <input type="text" name="medicinename" class = "fill form-control" required="true" [(ngModel)]="medicinedetails.medicineName" >
 
         </div>
 
@@ -36,6 +36,7 @@
             <input type="text" name="details" class = "fill form-control" [(ngModel)]="medicinedetails.details">
 
         </div>
+       
         <!-- <div class="form-group">
 
             <label for="mobile">Mobile</label><br>
@@ -71,45 +72,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
-<!-- <a href="#myModal" class="trigger-btn" data-toggle="modal">click</a> -->
-<!-- <div id="myModal" class="modal fade">
-	<div class="modal-dialog modal-confirm">
-		<div class="modal-content">
-			<div class="modal-header">
-				<div class="icon-box">
-					<i class="material-icons">&#xE876;</i>
-				</div>				
-				<h4 class="modal-title">Awesome!</h4>	
-			</div>
-			<div class="modal-body">
-				<p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
-			</div>
-		</div>
-	</div>
-</div>      -->
 </form>
 
 </div>
