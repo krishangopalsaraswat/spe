@@ -48,7 +48,6 @@
         <div class="fill form-group">
 
             <label for="medicinedomain">Medicine Domain</label><br>
-
            
             <select (change)="selectChangeHandler($event)">
                 
@@ -61,13 +60,56 @@
             </select>
             
         </div>
+        <button data-toggle="modal" class="trigger-btn btn btn-primary" type="button" data-target="#exampleModalCenter" (click)=registerMedicine()>Submit</button>
 
-<br>
-        <button class="btn btn-primary" type="submit" (click)=registerMedicine()>Submit</button>
+        <div *ngIf="added===true" style="text-align: center;" class="alert alert-success" role="alert">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 .5c-.6Request Mail Sent!62 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+              </svg>
+            <strong>Yay!</strong> Medicine added successfully!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
-    </form>
+<!-- <a href="#myModal" class="trigger-btn" data-toggle="modal">click</a> -->
+<!-- <div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title">Awesome!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>      -->
+</form>
 
 </div>
-<br>
-
-

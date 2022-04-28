@@ -24,27 +24,32 @@ export class AuthenticationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  validusername:any;
+  validpass:any;
 
   public getlogin(){
     this.service.dologin(this.users).subscribe(
 (response)=>{this.valid(response),console.log(this.signinDisable)},
-(error)=>console.log(error.error)
+(error)=>{console.log("err")}
     )
-
   }
 
-invalidLogin = true;
+// validLogin = false;
 
   valid(response){
     console.log(response[0])
+    if(response.length === 0){
+      console.log("empty")
+      this.validusername = false;
+    }
     if(this.users.username===response[0].username && this.users.password===response[0].password){
       sessionStorage.setItem('authenticatedUser', this.users.username);
-    
-      this.invalidLogin = false;
+      this.validpass = true;
+      this.validusername = true;
       this.router.navigate(['home'])
     }
     else {
-      this.invalidLogin = true;
+      this.validpass = false;
     }
   }
 
@@ -60,6 +65,9 @@ invalidLogin = true;
     (this.router.navigate(['authentication']))  
   }
 
-  
+  redirect(){
+  window.location.href = "authentication"
+
+  }
   
 }

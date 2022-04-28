@@ -13,8 +13,25 @@
 
     <div class="row buttons">
     <button class="btn btn-success" (click)="getlogin()">Login</button>
-    <button class="btn btn-primary" (click)="createuser()"   >Signup</button>
+    <button class="btn btn-primary" (click)="createuser()">Signup</button>
+</div>
+    <br>
+    <br> 
+
+    <div *ngIf="validusername===false" style="text-align: center;" class="alert alert-danger" role="alert">
+        <strong></strong>This username does not exist! 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
+            <span aria-hidden="true">&times;</span>
+        </button>
   </div>
+
+  <div *ngIf="validpass===false" style="text-align: center;" class="alert alert-danger" role="alert">
+    <strong>Sorry!</strong> Invalid password
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
 </div>
 
 <!-- <router-outlet></router-outlet> -->

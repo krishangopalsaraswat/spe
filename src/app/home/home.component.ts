@@ -25,6 +25,8 @@ medicinerequest:medicineRequest=new medicineRequest;
   
     requestedMedicineName:any;
     availableTablets:any;
+    submitted:any;
+    
 
   
   ngOnInit() {
@@ -33,6 +35,7 @@ medicinerequest:medicineRequest=new medicineRequest;
     // console.log(this.route.snapshot.params['medName'])
     this.medicinerequest.userEmail=this.route.snapshot.params['useremail']
     console.log(this.medicinerequest.userEmail)
+    this.submitted = false;
 }
 
 
@@ -40,8 +43,12 @@ requestmedicine(){
       this.service.sendemailForRequest(this.medicinerequest).subscribe(
         response=>console.log("ok")
       ),
-this.router.navigate(['home'])
+        this.submitted = true;
   
+}
+redirect(){
+  this.router.navigate(['home'])
+
 }
 
 }

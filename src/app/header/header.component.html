@@ -2,7 +2,7 @@
   
     <button mat-raised-button color="primary"style='margin-right:20px'
     (click)=home()><mat-icon>home</mat-icon></button>
-    <span>Karuna</span>
+    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Karuna</span>
   
     
     <div class="example-spacer"></div>
@@ -10,6 +10,7 @@
       <input class="find form-control rounded mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchMedicine">
 
         <mat-icon (click)=getMedicine()>search</mat-icon>
+
       <div class="dropdown" >
         <button class="dropbtn btn btn-warning">Select by Category</button>
         <div class="dropdown-content">

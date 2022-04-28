@@ -16,9 +16,10 @@ export class AddMedicineComponent implements OnInit {
     private router:Router) { }
 
     useremail:any;
+    added:any;
   ngOnInit(): void {
     this.useremail=sessionStorage.getItem('authenticatedUser');
-    
+    this.added=false;
   }
 
 // ***************event handler to add medicine details***************
@@ -27,9 +28,12 @@ export class AddMedicineComponent implements OnInit {
     this.medicinedetails.userEmail=this.useremail
       this.service.doaddmedicine(this.medicinedetails).subscribe(
         res=>
-          (console.log("ok"))
+          {console.log("ok"),this.added=true;}
       )
-      this.router.navigate(['home'])
+      
+      
+      // this.router.navigate(['home'])
+      // window.location.href = "home"
 
   }
 
@@ -40,6 +44,10 @@ export class AddMedicineComponent implements OnInit {
 
 // ***************SHow eamil************
 
+redirect(){
+  this.router.navigate(['home'])
+
+}
 
  
 
