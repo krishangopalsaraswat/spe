@@ -1,37 +1,63 @@
 <br>
 <br>
-<div class="login">
-    <div>
-        Email:   <input type="text" name="username" [(ngModel)]="users.username">
-    </div>
-    <br>
-    <div>
-        Password:   <input type="password" name="password" [(ngModel)]="users.password">
-    </div>
-    <br>
-    <br>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <h2 style="margin-left:35%; color: rgb(81, 0, 128);" class="heading">Welcome to Karuna!</h2>
+          <br>
+          <br>
+          <img style="margin-left:15%;" src="https://t4.ftcdn.net/jpg/02/08/75/33/360_F_208753323_sE0rGA23jMKFNtbFoUQiRMxW6qoYePGM.jpg" class="img img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 login"
+        style="padding-top: 5%;">
+                    
+        <div>
+            <div>
+                Email:   <input type="text"  placeholder="Email" name="username" [(ngModel)]="users.username" required>
+            </div>
+            <br>
+            <div>
+                Password:   <input type="password"  placeholder="password"  name="password" [(ngModel)]="users.password" required>
+            </div>
+        </div>
 
-    <div class="row buttons">
-    <button class="btn btn-success" (click)="getlogin()">Login</button>
-    <button class="btn btn-primary" (click)="createuser()">Signup</button>
-</div>
-    <br>
-    <br> 
+            <br>
+            <br>
 
-    <div *ngIf="validusername===false" style="text-align: center;" class="alert alert-danger" role="alert">
-        <strong></strong>This username does not exist! 
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-  </div>
+            <div class="row buttons">
+            <button class="btn btn-success" (click)="getlogin()">Login</button>
+            <button class="btn btn-primary" (click)="createuser()">Signup</button>
+            </div>
+            <br>
+            <br> 
 
-  <div *ngIf="validpass===false" style="text-align: center;" class="alert alert-danger" role="alert">
-    <strong>Sorry!</strong> Invalid password
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+            <div *ngIf="validusername===false" style="text-align: center;" class="alert alert-danger" role="alert">
+                <strong></strong>This username does not exist! 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
 
-</div>
+        <div *ngIf="validpass===false" style="text-align: center;" class="alert alert-danger" role="alert">
+            <strong>Sorry!</strong> Invalid password
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
 
+        </div>
+        </div>
+      </div>
+</section>
 <!-- <router-outlet></router-outlet> -->
+
+<!-- <div class="login">
+            <label>Email:</label>
+            <input type="email" name="username" [(ngModel)]="users.username" required />
+            <br>
+            <label>Password:</label>
+            <input type="password" name="password" [(ngModel)]="users.password" required />  
+            </div> -->
+            

@@ -34,17 +34,18 @@ export class AuthenticationComponent implements OnInit {
     )
   }
 
-
   valid(response){
     console.log(response[0])
     if(response.length === 0){
       console.log("empty")
       this.validusername = false;
     }
+    else{
+      this.validusername = true;
+    }
     if(this.users.username===response[0].username && this.users.password===response[0].password){
       sessionStorage.setItem('authenticatedUser', this.users.username);
       this.validpass = true;
-      this.validusername = true;
       this.router.navigate(['home'])
     }
     else {
