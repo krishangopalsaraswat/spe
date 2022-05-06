@@ -1,0 +1,14 @@
+<div>
+    <a>Medicine Name: </a>
+</div>
+<br>
+<div>
+    <a>Tablet Count: </a>
+</div>
+<br>
+<div>
+<input type="text" [ngModel]="updatedCount">
+</div>
+    <br>
+    
+    <button mat-button [mat-dialog-close]="updatedCount" cdkFocusInitial>Ok</button>

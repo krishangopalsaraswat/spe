@@ -14,12 +14,12 @@
       <div class="dropdown" >
         <button class="dropbtn btn btn-warning">Select by Category</button>
         <div class="dropdown-content">
-          <a href="#">Antibiotics</a>
-          <a href="#">Cough Syrup</a>
-          <a href="#">Vitamins</a>
-          <a href="#">Eyes</a>
-          <a href="#">Kidney</a>
-          <a href="#">Others</a>
+          <a [routerLink]="['/getByCategory', 'antibiotics']" href="">Antibiotics</a>
+          <a [routerLink]="['/getByCategory', 'coughsyrup']" href="">Cough Syrup</a>
+          <a [routerLink]="['/getByCategory', 'vitamins']" href="">Vitamins</a>
+          <a [routerLink]="['/getByCategory', 'eyes']" href="">Eyes</a>
+          <a [routerLink]="['/getByCategory', 'kidney']" href="">Kidney</a>
+          <a [routerLink]="['/getByCategory', 'others']" href="">Others</a>
         </div>
       </div>
       
@@ -28,8 +28,8 @@
       
       <button class="btn btn-warning" color="accent" style='margin-right:16px' *ngIf="!dataservice.isUserLoggedIn()" (click)=showDonations()> Your donations </button>
 
-        <button class="btn btn-warning" color="accent"style='margin-right:16px'><mat-icon>room</mat-icon>
-        </button>
+        <!-- <button class="btn btn-warning" color="accent"style='margin-right:16px'><mat-icon>room</mat-icon> -->
+        <!-- </button> -->
     <button class="btn btn-warning"n color="accent" (click)="gotoAuthentication()"
     *ngIf="dataservice.isUserLoggedIn()">Login</button>
     <button class="btn btn-warning" color="accent" (click)="gotoAuthenticationService()"
@@ -55,9 +55,9 @@
 
     
 
-<app-show-don [ChildMobileResponse]="mobileResponse"></app-show-don>
+<!-- <app-show-don [ChildMobileResponse]="mobileResponse"></app-show-don> -->
 
-<app-search-data [childresponse]="mresponse"></app-search-data>
+<!-- <app-search-data [childresponse]="mresponse"></app-search-data> -->
 
 
 

@@ -25,6 +25,10 @@ import { HomeComponent } from './home/home.component';
 import { ShowDonComponent } from './show-don/show-don.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { SearchByCategoryComponent } from './search-by-category/search-by-category.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateTabletCountComponent } from './update-tablet-count/update-tablet-count.component';
 
 
 
@@ -40,7 +44,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     SearchDataComponent,
     AuthenticationComponent,
     HomeComponent,
-    ShowDonComponent
+    ShowDonComponent,
+    SearchByCategoryComponent,
+    UpdateTabletCountComponent,
+    SearchByCategoryComponent
 
   ],
   imports: [
@@ -57,7 +64,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatListModule,
     LayoutModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   
   ],
   providers: [AuthenticationComponent,CardsComponent,HomeComponent],

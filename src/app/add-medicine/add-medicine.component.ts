@@ -31,7 +31,7 @@ export class AddMedicineComponent implements OnInit {
           {console.log("ok"),this.added=true;}
       )
       // this.router.navigate(['home'])
-      // window.location.href = "home"
+      // window.location.href='home'
 
   }
 
@@ -46,7 +46,5 @@ redirect(){
   this.router.navigate(['home'])
 
 }
-
- 
 
 }

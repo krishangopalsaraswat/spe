@@ -1,5 +1,5 @@
 .login{
-    text-align: center;
+    text-align:left;
     border: 1px solid;
     padding: 20px;
     box-shadow: 5px 10px 8px 10px #888888;
@@ -8,6 +8,7 @@
     /* top:200px; */
     font-weight: bold;
 }
+
 .heading{
     font-family: Brush Script MT, Brush Script Std, cursive;
     margin: 0 auto;

@@ -54,11 +54,13 @@ export class AuthenticationComponent implements OnInit {
   }
 
   signupDisable:any;
+  registered:any;
   
   public createuser(){
     this.service.dosignup(this.users).subscribe(
       (response)=>console.log("regristraion done")
           ),
+          this.registered=true,
           // this.signupDisable='true';
           // (sessionStorage.setItem('registereduser', this.users.username)),
           // console.log(sessionStorage.getItem('registereduser')),

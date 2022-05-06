@@ -1,5 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AddMedicineService } from '../service/add-medicine.service';
 
 
 @Component({
@@ -9,21 +10,32 @@ import { Router } from '@angular/router';
 })
 export class SearchDataComponent implements OnInit {
 
-  @Input() childresponse:any;
+  childresponse:any;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    private service:AddMedicineService,
+    private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.childresponse)
+    this.route.paramMap.subscribe(params => { 
+      // this.medcineCategory=params.get('category'); 
+      console.log(params.get('medName'))
+      this.service.getmedicinebyName(params.get('medName')).subscribe((data)=>this.childresponse=data)
+  });
+    
     
   }
   
-  request(){
-    // sessionStorage.setItem('medicinename', this.medicine.medicineName);
-    // window.location.reload();
-   
-    this.router.navigate(['request'])
+    
+  
+  
+  request(mname,tcount,useremail){
+
+   this.router.navigate(['request',mname,tcount,useremail])
+  }
 
   }
 
-}
+  
+
+  

@@ -6,13 +6,15 @@
     <h2>Medicine Name: {{requestedMedicineName}}</h2>
     <h2>Available Medicines: {{availableTablets}}</h2>
 <hr>
-    <form>
+    <form #userForm="ngForm">
 
         <div class="form-group">
 
             <label for="name">Name</label><br>
 
-            <input type="text" name="name" class = "fill form-control" [(ngModel)]="medicinerequest.name">
+            <input type="text" name="name" class = "fill form-control" [(ngModel)]="medicinerequest.name" required
+            #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name required</small>
 
         </div>
 
@@ -20,7 +22,9 @@
 
             <label for="email">Email</label><br>
 
-            <input type="text" name="email" class = "fill form-control"    [(ngModel)]="medicinerequest.email">
+            <input type="text" name="email" class = "fill form-control"    [(ngModel)]="medicinerequest.email" required
+            #email="ngModel" [class.is-invalid]="email.invalid && email.touched" class="form-control">
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email required</small>
 
         </div>
 
@@ -28,7 +32,9 @@
 
             <label for="mobile">Phone Number</label><br>
 
-            <input type="text" name="mobile" class = "fill form-control" [(ngModel)]="medicinerequest.mobile">
+            <input type="text" name="mobile" class = "fill form-control" [(ngModel)]="medicinerequest.mobile" required
+            #mobile="ngModel" [class.is-invalid]="mobile.invalid && mobile.touched" class="form-control">
+            <small class="text-danger" [class.d-none]="mobile.valid || mobile.untouched">Phone Number required</small>
 
         </div>
 
@@ -36,7 +42,9 @@
 
             <label for="tabletNeeded">Tablet Needed</label><br>
 
-            <input type="text" name="tabletNeeded" class = "fill form-control" [(ngModel)]="medicinerequest.tabletNeeded">
+            <input type="text" name="tabletNeeded" class = "fill form-control" [(ngModel)]="medicinerequest.tabletNeeded" required
+            #tabletNeeded="ngModel" [class.is-invalid]="tabletNeeded.invalid && tabletNeeded.touched" class="form-control">
+            <small class="text-danger" [class.d-none]="tabletNeeded.valid || tabletNeeded.untouched">Amount of tablets required</small>
 
         </div>
 
@@ -44,13 +52,15 @@
 
             <label for="address">Address</label><br>
 
-            <input type="text" name="address" class = "fill form-control" [(ngModel)]="medicinerequest.address">
+            <input type="text" name="address" class = "fill form-control" [(ngModel)]="medicinerequest.address" required
+            #address="ngModel" [class.is-invalid]="address.invalid && address.touched" class="form-control">
+            <small class="text-danger" [class.d-none]="address.valid || address.untouched">Address required</small>
 
         </div>
         <br>
         <br>
        
-        <button class="btn btn-primary" type="submit" (click)="requestmedicine()">Submit Request</button>
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" (click)="requestmedicine()">Submit Request</button>
         <br>
         <br> 
 
@@ -62,6 +72,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
                 <span aria-hidden="true">&times;</span>
             </button>
+            <img src="https://cdn1.vectorstock.com/i/thumb-large/33/15/get-well-soon-banner-with-doodle-flowers-pink-vector-30323315.jpg"class="img img-fluid">
         </div>
 
     </form>

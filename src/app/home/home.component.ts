@@ -49,7 +49,9 @@ requestmedicine(){
 redirect(){
   this.router.navigate(['home'])
 
+// window.location.href=""
 }
 
+// window.location.href=""
 }
 

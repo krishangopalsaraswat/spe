@@ -13,7 +13,7 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 login"
         style="padding-top: 5%;">
                     
-        <div>
+        <!-- <div>
             <div>
                 Email:   <input type="text"  placeholder="Email" name="username" [(ngModel)]="users.username" required>
             </div>
@@ -21,18 +21,49 @@
             <div>
                 Password:   <input type="password"  placeholder="password"  name="password" [(ngModel)]="users.password" required>
             </div>
-        </div>
+        </div> -->
+        <form #userForm="ngForm">
+            <!-- {{ userForm.form.valid }} -->
+            <div class="form-group">
+    
+                <label for="medicinename">Email</label><br>
+                <input type="text" placeholder="Email" class = "fill form-control" id="name" [(ngModel)]="users.username" required 
+                #name="ngModel" [class.is-invalid]="name.invalid && name.touched" name="name" class="form-control">
+                <small class="text-danger" [class.d-none]="name.valid || name.untouched">Email required</small>
+                
+                <br>
+
+                <label for="medicinename">Password</label><br>
+                <input type="text" placeholder="Password" class = "fill form-control" id="name" [(ngModel)]="users.password" required minlength="8"
+                #password="ngModel" [class.is-invalid]="password.invalid && password.touched" name="password" class="form-control">
+                <small class="text-danger" [class.d-none]="password.valid || password.untouched">Enter a valid password of min 8 characters</small>
+                
+            </div>
+
+            
 
             <br>
             <br>
 
             <div class="row buttons">
-            <button class="btn btn-success" (click)="getlogin()">Login</button>
-            <button class="btn btn-primary" (click)="createuser()">Signup</button>
+            <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-success" (click)="getlogin()">Login</button>
+            <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary" (click)="createuser()">Signup</button>
+            </div>
+
+            <br>
+            <div *ngIf="registered===true" style="text-align: center;" class="alert alert-success" role="alert">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 .5c-.6Request Mail Sent!62 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                  </svg>
+                <strong>Yay!</strong> Your Account has been registered!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
             </div>
             <br>
             <br> 
-
+        </form>
             <div *ngIf="validusername===false" style="text-align: center;" class="alert alert-danger" role="alert">
                 <strong></strong>This username does not exist! 
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="redirect()">
