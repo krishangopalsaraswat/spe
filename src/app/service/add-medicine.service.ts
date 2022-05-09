@@ -17,6 +17,12 @@ export class AddMedicineService {
     return this.http.get("http://localhost:8084/searchMedicineDetails/"+mname);
   }
 
+  getBored()
+  {
+    return this.http.get(`http://www.boredapi.com/api/activity/`);
+  }
+
+
 
 // ********getting all medicine details to home component********
   public getallmedicines(){

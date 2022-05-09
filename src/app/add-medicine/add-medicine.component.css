@@ -31,6 +31,20 @@
     width: 200px;
     height: 25px;
   }
+.heading{
+	letter-spacing: 3px;
+    animation: load ease-in-out 1s;
+}
+@keyframes load {
+    from {
+      opacity: 0;
+      letter-spacing: -1px;
+    }
+    to {
+      opacity: 1;
+      letter-spacing: 3px;
+    }
+ }
   
   body {
 		font-family: 'Varela Round', sans-serif;

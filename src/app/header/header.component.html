@@ -2,10 +2,19 @@
   
     <button mat-raised-button color="primary"style='margin-right:20px'
     (click)=home()><mat-icon>home</mat-icon></button>
-    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b>Karuna</b> - The Helping Hands</span>
+    <span style="font-family:'Trebuchet MS','Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b>Karuna</b> - The Helping Hands</span>
   
-    
     <div class="example-spacer"></div>
+   
+    <button class="butn" (click)="openDialog()">>
+
+      <svg width="180px" height="50px" viewBox="0 0 180 50" class="border">
+        <polyline points="179,1 179,49 1,49 1,1 179,1" class="bg-line" />
+        <polyline points="179,1 179,49 1,49 1,1 179,1" class="hl-line" />
+      </svg>
+      <span>Click to kill boredom!</span>
+     
+    </button>
 
       <input class="find form-control rounded mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchMedicine">
 

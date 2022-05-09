@@ -29,6 +29,8 @@ import { SearchByCategoryComponent } from './search-by-category/search-by-catego
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateTabletCountComponent } from './update-tablet-count/update-tablet-count.component';
+import { BoredApiComponent } from './bored-api/bored-api.component';
+
 
 
 
@@ -47,7 +49,8 @@ import { UpdateTabletCountComponent } from './update-tablet-count/update-tablet-
     ShowDonComponent,
     SearchByCategoryComponent,
     UpdateTabletCountComponent,
-    SearchByCategoryComponent
+    SearchByCategoryComponent,
+    BoredApiComponent
 
   ],
   imports: [

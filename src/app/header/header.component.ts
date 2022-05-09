@@ -4,6 +4,8 @@ import { AuthenticationComponent} from '../authentication/authentication.compone
 import { AddMedicineService } from '../service/add-medicine.service';
 import { AuthenticationServiceService } from '../service/authentication-service.service';
 import { ShowDonationsService } from '../service/show-donations.service';
+import {MatDialog} from '@angular/material/dialog';
+import { BoredApiComponent } from '../bored-api/bored-api.component';
 
 @Component({
   selector: 'app-header',
@@ -17,11 +19,24 @@ export class HeaderComponent implements OnInit {
     private service:AddMedicineService,
     public validUser:AuthenticationComponent,
     public dataservice:AuthenticationServiceService,
-    public showDownService:ShowDonationsService) { }
+    public showDownService:ShowDonationsService,
+    public dialog: MatDialog) {}
+
+  
 
   ngOnInit(): void {
     
   }
+
+//   openDialog() {
+//     const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+//     dialogRef.afterClosed().subscribe(result => {
+//       console.log(`Dialog result: ${result}`);
+//     });
+//   }
+// }) 
+
   showFiller = false;
 
   // **********rounting to add medicine page**********
@@ -73,5 +88,31 @@ selectcategory(){
   window.location.href="getMedicine"
 
 }
+popup = false;
+
+close(){
+  // this.popup=false;
+  // this.router.navigate(['authentication'])
+  // window.location.href="authentication"
+
 
 }
+
+// *****************bored api popup**************
+
+openDialog(): void {
+  const dialogRef = this.dialog.open(BoredApiComponent, {
+    width: '250px',
+    // data: {name: this.name, animal: this.animal},
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+    // this.animal = result;
+  });
+}
+}
+
+
+
+
